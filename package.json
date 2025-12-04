@@ -1,7 +1,7 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-image-tool",
   "version": "0.1.0",
-  "description": "Quick start for n8n community nodes with easy development flow with Docker compose setup.",
+  "description": "Image Tool node for n8n",
   "keywords": [
     "n8n-community-node-package"
   ],
@@ -9,14 +9,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "",
+  "homepage": "https://github.com/dioveath/n8n-nodes-image-tool",
   "author": {
     "name": "rAi",
     "email": "raisaroj360@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/dioveath/n8n-nodes-image-tool.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -37,13 +37,8 @@
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/ImageTool/ImageTool.node.js"
     ]
   },
   "devDependencies": {
