@@ -65,7 +65,7 @@ export const compositeHtmlImageProperties: INodeProperties[] = [
 		displayName: 'Width',
 		name: 'width',
 		type: 'number',
-		default: '',
+		default: 1280,
 		description: 'Output image width in pixels',
 		displayOptions: {
 			show: {
@@ -77,7 +77,7 @@ export const compositeHtmlImageProperties: INodeProperties[] = [
 		displayName: 'Height',
 		name: 'height',
 		type: 'number',
-		default: '',
+		default: 720,
 		description: 'Output image height in pixels',
 		displayOptions: {
 			show: {

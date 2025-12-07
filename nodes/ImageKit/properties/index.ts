@@ -1,5 +1,5 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { compositeHtmlImageProperties } from './compositeHtmlImage';
+import { compositeHtmlImageProperties } from './compositeHtmlImage.properties';
 
 export const operationFields: INodeProperties[] = [
 	{

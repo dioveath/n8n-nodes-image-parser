@@ -1,0 +1,20 @@
+{
+	"node": "n8n-nodes-imagekit",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Utility"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/dioveath/n8n-nodes-imagekit"
+			}
+		]
+	},
+	"alias": [
+		"imagekit",
+        "image",
+        "html-image",
+        "edit-image",
+        "image-editor"
+	]
+}

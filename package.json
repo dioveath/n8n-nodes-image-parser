@@ -56,8 +56,6 @@
     "n8n-workflow": "*"
   },
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.83",
-    "@types/node": "^24.10.1",
-    "expr-eval": "^2.0.2"
+    "@types/node": "^24.10.1"
   }
 }
