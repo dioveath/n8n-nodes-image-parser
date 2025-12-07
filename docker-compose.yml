@@ -1,6 +1,7 @@
 x-shared: &shared
   restart: unless-stopped
   environment:
+    - N8N_DIAGNOSTICS_ENABLED=false
     - N8N_RUNNERS_ENABLED=true
     - N8N_RUNNERS_MODE=external
     - N8N_RUNNERS_AUTH_TOKEN=${RUNNERS_AUTH_TOKEN}
@@ -18,7 +19,7 @@ x-shared: &shared
     - N8N_SECURE_COOKIE=false
     - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false      
     - N8N_PORT=5000
-    - WEBHOOK_URL=http://host.docker.internal:5000
+    - WEBHOOK_URL=http://localhost:5000
   volumes:
     - ./data:/home/node/.n8n
     - ./dist:/home/node/.n8n/custom/node_modules/${REPO_NAME}

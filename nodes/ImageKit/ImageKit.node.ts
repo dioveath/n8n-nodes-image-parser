@@ -207,12 +207,18 @@ export class ImageKit implements INodeType {
 					{
 						displayName: 'Font',
 						name: 'font',
-						type: 'options',
-						typeOptions: {
-							loadOptionsMethod: 'getFonts',
-						},
-						default: '',
-						description: 'Select a font from available fonts',
+						values: [
+							{
+								displayName: 'Font',
+								name: 'font',
+								type: 'options',
+								typeOptions: {
+									loadOptionsMethod: 'getFonts',
+								},
+								default: '',
+								description: 'Select a font from available fonts',
+							},
+						],
 					},
 				],
 			},
@@ -226,6 +232,8 @@ export class ImageKit implements INodeType {
 					baseUrl: string;
 				};
 				
+				this.logger.info(`Loading fonts from ${credentials.baseUrl}`);
+
 				if (!credentials?.baseUrl) {
 					return [];
 				}
