@@ -8,6 +8,8 @@ import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 import { getFonts } from './listSearch/getFonts';
 import { executeCompositeHtmlImage } from './operations/compositeHtmlImage.operation';
 import { executeListFonts } from './operations/listFonts.operation';
+import { executeDetectFaces } from './operations/detectFaces.operation';
+import { executeCropFace } from './operations/cropFace.operation';
 import { operationFields } from './properties';
 import type { ImageKitCredentials } from './types';
 
@@ -57,6 +59,12 @@ export class ImageKit implements INodeType {
 					returnData.push(result);
 				} else if (operation === 'listFonts') {
 					const result = await executeListFonts.call(this, i, baseUrl);
+					returnData.push(result);
+				} else if (operation === 'detectFaces') {
+					const result = await executeDetectFaces.call(this, i, baseUrl);
+					returnData.push(result);
+				} else if (operation === 'cropFace') {
+					const result = await executeCropFace.call(this, i, baseUrl);
 					returnData.push(result);
 				}
 			} catch (error) {

@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { compositeHtmlImageProperties } from './compositeHtmlImage.properties';
+import { detectFacesProperties } from './detectFaces.properties';
+import { cropFaceProperties } from './cropFace.properties';
 
 export const operationFields: INodeProperties[] = [
 	{
@@ -18,9 +20,21 @@ export const operationFields: INodeProperties[] = [
 				value: 'listFonts',
 				action: 'List available fonts',
 			},
+			{
+				name: 'Detect Faces',
+				value: 'detectFaces',
+				action: 'Detect faces in image',
+			},
+			{
+				name: 'Crop Face',
+				value: 'cropFace',
+				action: 'Crop face from image',
+			},
 		],
 		default: 'compositeHtmlImage',
 	},
 	...compositeHtmlImageProperties,
+	...detectFacesProperties,
+	...cropFaceProperties,
 ];
 

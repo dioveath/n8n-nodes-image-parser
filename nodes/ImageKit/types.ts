@@ -41,3 +41,36 @@ export interface ImageKitCredentials {
 	baseUrl: string;
 }
 
+export interface FaceDetectionRequest {
+	image: string; // base64 encoded image
+	confidence_threshold?: number;
+}
+
+export interface Face {
+	x1: number;
+	y1: number;
+	x2: number;
+	y2: number;
+	confidence: number;
+}
+
+export interface FaceDetectionResponse {
+	faces: Face[];
+	count: number;
+}
+
+export interface FaceCropRequest {
+	image: string; // base64 encoded image
+	confidence_threshold?: number;
+	width?: number;
+	height?: number;
+	respect_aspect_ratio?: boolean;
+}
+
+export interface FaceCropResponse {
+	image: string; // base64 encoded image
+	width: number;
+	height: number;
+	face_confidence: number;
+}
+
