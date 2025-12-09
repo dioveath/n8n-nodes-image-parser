@@ -6,10 +6,13 @@ import type {
 } from 'n8n-workflow';
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 import { getFonts } from './listSearch/getFonts';
+import { getBackgroundModels } from './listSearch/getBackgroundModels';
 import { executeCompositeHtmlImage } from './operations/compositeHtmlImage.operation';
 import { executeListFonts } from './operations/listFonts.operation';
 import { executeDetectFaces } from './operations/detectFaces.operation';
 import { executeCropFace } from './operations/cropFace.operation';
+import { executeListBackgroundModels } from './operations/listBackgroundModels.operation';
+import { executeRemoveBackground } from './operations/removeBackground.operation';
 import { operationFields } from './properties';
 import type { ImageKitCredentials } from './types';
 
@@ -39,6 +42,7 @@ export class ImageKit implements INodeType {
 	methods = {
 		loadOptions: {
 			getFonts,
+			getBackgroundModels,
 		},
 	};
 
@@ -65,6 +69,12 @@ export class ImageKit implements INodeType {
 					returnData.push(result);
 				} else if (operation === 'cropFace') {
 					const result = await executeCropFace.call(this, i, baseUrl);
+					returnData.push(result);
+				} else if (operation === 'listBackgroundModels') {
+					const result = await executeListBackgroundModels.call(this, i, baseUrl);
+					returnData.push(result);
+				} else if (operation === 'removeBackground') {
+					const result = await executeRemoveBackground.call(this, i, baseUrl);
 					returnData.push(result);
 				}
 			} catch (error) {

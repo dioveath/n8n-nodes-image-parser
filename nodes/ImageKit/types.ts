@@ -74,3 +74,23 @@ export interface FaceCropResponse {
 	face_confidence: number;
 }
 
+export interface BackgroundModel {
+	id: string;
+	description: string;
+	pros: string;
+}
+
+export type BackgroundModelsResponse = BackgroundModel[];
+
+export interface RemoveBackgroundRequest {
+	image: string; // base64 encoded image
+	model?: string;
+}
+
+export interface RemoveBackgroundResponse {
+	image: string; // base64 encoded image
+	format: string; // e.g. "png"
+	width: number;
+	height: number;
+}
+
